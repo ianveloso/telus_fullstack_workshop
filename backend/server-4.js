@@ -2,6 +2,9 @@
 const express = require('express'); // import the library
 
 const app = express(); // create the server
+
+app.use(express.json()) // server configuration
+
 const VERSION = '1.0';
 const database = [
   { id: 1, name: 'Buy Milk', description: 'Almond' },
@@ -25,6 +28,7 @@ app.post('/task', (req, res) => {
   console.log('Receiving new task from client');
   console.log(req.body);
   database.push(req.body);
+  res.send({ message: "Successfully added new task!"});
 });
 
 // start the server
