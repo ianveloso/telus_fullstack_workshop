@@ -10,11 +10,13 @@ const database = [
 
 // Handle requests for GET /version
 app.get('/version', (req, res) => {
+  console.log('Sending version to client');
   res.send({ version: VERSION });
 });
 
 // Handle requests for GET /tasks
 app.get('/tasks', (req, res) => {
+  console.log('Sending tasks to client');
   res.send(database);
 });
 

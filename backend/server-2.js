@@ -6,6 +6,7 @@ const VERSION = '1.0';
 
 // Handle requests for GET /version
 app.get('/version', (req, res) => {
+  console.log('Sending version to client');
   res.send({ version: VERSION });
 });
 

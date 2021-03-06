@@ -10,17 +10,21 @@ const database = [
 
 // Handle requests for GET /version
 app.get('/version', (req, res) => {
+  console.log('Sending version to client');
   res.send({ version: VERSION });
 });
 
 // Handle requests for GET /tasks
 app.get('/tasks', (req, res) => {
+  console.log('Sending tasks to client');
   res.send(database);
 });
 
 // Handle requests for POST /task
 app.post('/task', (req, res) => {
-  
+  console.log('Receiving new task from client');
+  console.log(req.body);
+  database.push(req.body);
 });
 
 // start the server
