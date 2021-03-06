@@ -1,0 +1,21 @@
+{
+  "name": "telus_fullstack_workshop",
+  "version": "1.0.0",
+  "description": "An introductory level workshop for the development of a simple full stack application using popular JavaScript tools (i.e. Node.js, React, Express)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianveloso/telus_fullstack_workshop.git"
+  },
+  "author": "Ian Veloso & Camryn Roadley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ianveloso/telus_fullstack_workshop/issues"
+  },
+  "homepage": "https://github.com/ianveloso/telus_fullstack_workshop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
