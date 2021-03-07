@@ -1,4 +1,4 @@
-// server-4.js
+// server-5.js
 const express = require('express'); // import the library
 
 const app = express(); // create the server
@@ -29,6 +29,27 @@ app.post('/task', (req, res) => {
   console.log(req.body);
   database.push(req.body);
   res.send({ message: "Successfully added new task!"});
+});
+
+// Handle requests for DELETE /task
+app.delete('/task/:id', (req, res) => {
+  console.log(`Deleting task on client with task id: ${req.params.id}`);
+  const result = database.find(task => task.index == req.params.id);
+  database.filter(task => task.id !== req.params.id);
+
+  res.send(result);
+});
+
+// Handle requests for UPDATE /task
+app.put('/task/:id', (req, res) => {
+  console.log(`Updating task on client with task id: ${req.params.id}`);
+  const result = database.findIndex(task => task.index == req.params.id);
+  if(result !== -1) {
+    database[result] = req.body;
+    res.send(database[result]);
+  } else {
+    res.status(404).send({ message: 'Invalid task id' });
+  }
 });
 
 // start the server

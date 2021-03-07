@@ -4,8 +4,8 @@ const express = require('express'); // import the library
 const app = express(); // create the server
 const VERSION = '1.0';
 const database = [
-  { id: 1, name: 'Buy Milk', description: 'Almond' },
-  { id: 2, name: 'Visit the vet', description: 'Emma' },
+  { id: 1, text: 'Buy Milk', isCompleted: false },
+  { id: 2, text: 'Visit the vet', isCompleted: false },
 ];
 
 // Handle requests for GET /version
