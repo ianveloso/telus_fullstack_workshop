@@ -6,7 +6,7 @@ const app = express(); // create the server
 app.use(express.json()) // server configuration
 
 const VERSION = '1.0';
-const database = [
+let database = [
   { id: 1, text: 'Buy Milk', isCompleted: false },
   { id: 2, text: 'Visit the vet', isCompleted: false },
 ];
@@ -34,10 +34,9 @@ app.post('/task', (req, res) => {
 // Handle requests for DELETE /task
 app.delete('/task/:id', (req, res) => {
   console.log(`Deleting task on client with task id: ${req.params.id}`);
-  const result = database.find(task => task.index == req.params.id);
-  database.filter(task => task.id !== req.params.id);
-
-  res.send(result);
+  database = database.filter(task => task.id != req.params.id);
+  
+  res.send(database);
 });
 
 // Handle requests for UPDATE /task
