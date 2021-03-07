@@ -42,7 +42,7 @@ app.delete('/task/:id', (req, res) => {
 // Handle requests for UPDATE /task
 app.put('/task/:id', (req, res) => {
   console.log(`Updating task on client with task id: ${req.params.id}`);
-  const result = database.findIndex(task => task.index == req.params.id);
+  const result = database.findIndex(task => task.id == req.params.id);
   if(result !== -1) {
     database[result] = req.body;
     res.send(database[result]);
